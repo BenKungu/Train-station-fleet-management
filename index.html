@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>OCC</title>
+    <link rel="stylesheet" href="./css/designer.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link type=text/css
+    href="https://fonts.googleapis.com/css?family=Muli:400,300" rel=stylesheet>
+    <link rel="icon" href="./img/logo.png?v=97?v=15082447am" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"
+    />
+    <link rel="stylesheet" href="assets/css/feathericon.min.css" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/css/feathericon.min.css" />
+    <!-- <link rel="stylesheet" href="assets/plugins/morris/morris.css"> -->
+
+    <link rel="stylesheet" href="assets/css/style.css?v=97979lp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script type="text/javascript">
+      var ajaxw = " WHERE ";
+      var ajaxl = " LIKE ";
+      var ajaxo = " OR ";
+      var ajaxa = " AND ";
+      var ajaxe = "=";
+      var ajaxgb = " group by ";
+      var ajaxob = " order by ";
+      var ajaxvl = "  '%' magic_clean_str(this.value) '%' ";
+      var ajaxij = " INNER JOIN ";
+      var ajaxon = " ON ";
+    </script>
+
+    <style type="text/css"></style>
+  </head>
+  <body class="mini-sidebar">
+    <form method="post" enctype="multipart/form-data" id="mosy_form">
+      <div class="main-wrapper">
+        <div class="header">
+          <div class="header-left">
+            <a class="mobile_btn" id="mobile_btn">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a href="javascript:void(0);" id="toggle_btn">
+              <i class="fa fa-align-right"></i>
+            </a>
+            <a
+              href="index.php"
+              class="logo logo-small"
+              style="margin-left: -100px"
+            >
+              <img
+                src="./img/logo.png?v=97"
+                alt="Logo"
+                width="30"
+                height="30"
+              />
+              <span class="bold h5"></span>
+            </a>
+          </div>
+          <div class="top-nav-search pt-2">
+            <a href="index.php" class="logo">
+              <img
+                src="./img/logo.png?v=97"
+                style="width: auto; height: 40px"
+                alt="Logo"
+              />
+              <span class="bold h5"></span>
+            </a>
+          </div>
+          <ul class="nav user-menu">
+            <li class="nav-item dropdown noti-dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fa fa-bell text-success"></i>
+                <span class="badge badge-pill text-white">0</span>
+              </a>
+              <div class="dropdown-menu notifications">
+                <div class="topnav-dropdown-header">
+                  <span class="notification-title">Notifications</span>
+                  <a href="javascript:void(0)" class="clear-noti"></a>
+                </div>
+                <div class="noti-content">
+                  <ul class="notification-list"></ul>
+                </div>
+                <div class="topnav-dropdown-footer">
+                  <a href="mosy_notific">View all Notifications</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown has-arrow">
+              <a
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <span class="text-primary mr-2">Evening Ben</span>
+                <span class="user-img"
+                  ><img
+                    class="rounded-circle"
+                    src="img/useravatar.png"
+                    onerror="this.src='img/useravatar.png'"
+                    width="31"
+                /></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="user-header">
+                  <div class="avatar avatar-sm">
+                    <img
+                      src="img/useravatar.png"
+                      onerror="this.src='img/useravatar.png'"
+                      alt="User Image"
+                      class="avatar-img rounded-circle"
+                    />
+                  </div>
+                  <div class="user-text">
+                    <h6>Ben Kung'u</h6>
+                    <p class="text-muted mb-0">User</p>
+                  </div>
+                </div>
+                <a class="dropdown-item d-none" href="adminaccount"
+                  >My Profile</a
+                >
+                <a class="dropdown-item d-none" href="adminaccount"
+                  >Account Settings</a
+                >
+                <a class="dropdown-item" href="olm_sessionlogout.php">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+          <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+              <ul>
+                <li class="menu-title"></li>
+                <li>
+                  <a href="occ"
+                    ><i class="fa fa-train"></i> <span>OCC Dashboard</span></a
+                  >
+                </li>
+                <li>
+                  <a href="train_logs"
+                    ><i class="fa fa-file-text"></i>
+                    <span>Train Journey Log</span></a
+                  >
+                </li>
+                <li>
+                  <a href="line_manager"
+                    ><i class="fa fa-line-chart"></i>
+                    <span>Line Manager</span></a
+                  >
+                </li>
+                <li>
+                  <a href="station_manager"
+                    ><i class="fa fa-bolt"></i> <span>Stations Manager</span></a
+                  >
+                </li>
+                <li>
+                  <a href="section_manager"
+                    ><i class="fa fa-plus-circle"></i>
+                    <span>Section blocks</span></a
+                  >
+                </li>
+                <li>
+                  <a href="occ_inspections"
+                    ><i class="fa fa-clipboard"></i>
+                    <span>Inspection Logs</span></a
+                  >
+                </li>
+                <li>
+                  <a href="userlist"
+                    ><i class="fa fa-users"></i> <span>OBC Manager</span></a
+                  >
+                </li>
+                <li>
+                  <a href="field_manager"
+                    ><i class="fa fa-wrench"></i>
+                    <span>Track Inspectors</span></a
+                  >
+                </li>
+                <li>
+                  <a href="admin"
+                    ><i class="fa fa-user-circle"></i>
+                    <span>System Administrators</span></a
+                  >
+                </li>
+                <li>
+                  <a href="sys_settings"
+                    ><i class="fa fa-gear"></i> <span>System settings</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-wrapper">
+          <div class="content container-fluid m-0 p-0">
+            <div class="row m-0 p-0">
+              <div class="col-sm-12 m-0 p-0">
+                <!-- Start body content -->
+                <div
+                  class="row justify-content-center m-0 p-0 col-md-12 skin_plasma"
+                >
+                  <div class="col-md-3 p-0 bg-dark border">
+                    <div
+                      class="col-md-12 p-0 bg-dark"
+                      id=""
+                      style="height: 60vh; overflow-y: auto"
+                    >
+                      <!---- mosy grid--->
+                      <div
+                        class="row justify-content-center m-0 p-0 col-md-12"
+                        id=""
+                      >
+                        <div
+                          class="row justify-content-center m-0 p-0 col-md-12 bg-dark sticky_scroll"
+                          style="z-index: 999"
+                          id=""
+                        >
+                          <div class="col-lg-3 col-3 text-white bold" id="">
+                            Driver
+                          </div>
+                          <div class="col-lg-3 col-3 text-white bold" id="">
+                            Origin
+                          </div>
+                          <div class="col-lg-3 col-3 text-white bold" id="">
+                            Dest
+                          </div>
+                          <div class="col-lg-3 col-3 text-white bold" id="">
+                            status
+                          </div>
+                        </div>
+                        <div
+                          class="row justify-content-center m-0 p-0 col-md-12"
+                          id="search_temps_requests"
+                        ></div>
+                        <!-- <template id="loop_tasks_requests"> -->
+                        <div
+                          onclick="push_newval('requests_uptoken', btoa('{{primkey}}'));load_modal_req('{{status}}')"
+                          class="row justify-content-center bg-white cpointer m-0 p-0 col-md-12 sticky_scroll"
+                          style="z-index: 999"
+                          id=""
+                        >
+                          <div
+                            class="col-lg-3 col-3 text-wrap p-1 border"
+                            id=""
+                          >
+                            <span class="text-wrap">Ben</span>
+                          </div>
+                          <div
+                            class="col-lg-3 col-3 text-wrap p-1 border"
+                            id=""
+                          >
+                            <span class="text-wrap">Pipe</span>
+                          </div>
+                          <div
+                            class="col-lg-3 col-3 text-wrap p-1 border"
+                            id=""
+                          >
+                            <span class="text-wrap">Town</span>
+                          </div>
+                          <div
+                            class="col-lg-3 col-3 text-wrap p-1 border"
+                            id=""
+                          >
+                            <span class="text-wrap">Accepted</span>
+                          </div>
+                        </div>
+                        <!-- </template> -->
+                      </div>
+                    </div>
+
+                    <!---- mosy grid--->
+                    <div
+                      class="row justify-content-center m-0 p-0 col-md-12"
+                      id=""
+                    >
+                      <div class="col-md-12 pt-2" id="">
+                        <!-- start power button  -->
+                        <span
+                          id="delbtn"
+                          name=""
+                          class="badge border cpointer rounded_medium ml-3 p-2 mosy_msdn text-danger btn_neo"
+                          data-mosy_msdn="delete_requests()"
+                        >
+                          <i class="fa fa-trask"></i> Delete Request
+                        </span>
+                        <!-- End power button  -->
+
+                        <!-- start power button  -->
+                        <span
+                          id="delbtn"
+                          name=""
+                          class="badge border cpointer rounded_medium ml-3 p-2 mosy_msdn text-danger btn_neo"
+                          data-mosy_msdn="scroll__()"
+                        >
+                          <i class="fa fa-trask"></i> Scroll to
+                        </span>
+                        <!-- End power button  -->
+                      </div>
+
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Free Message
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Immediate Stop
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Support
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Restriction
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Remove Locomotive
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Train Data
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Menu
+                      </button>
+                      <button class="col-md-6 p-3 rounded" type="button">
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-9 p-0">
+                    <div
+                      class="row justify-content-center m-0 p-0 col-md-12 bg-dark"
+                      id=""
+                    >
+                      <div
+                        class="row justify-content-center m-0 p-0 col-md-12 bg-dark"
+                        id=""
+                      >
+                        <div class="col-md-12 mb-5 pt-4" id="">
+                          <span class="text-white mr-2 bg-danger ml-3 bold p-1"
+                            >NRB - EKV</span
+                          >
+                        </div>
+                        <div
+                          class="m-0 occ_screen col-md-12 m-2"
+                          id="occ_screen"
+                        >
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              NCS 1</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">NCS</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              DON 2</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">9 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">DON</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              MKR 3</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">MKR</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              PPL 4</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">15 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">PPL</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              EKV 5</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">25 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">EKV</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                        </div>
+                        <div class="col-md-12 mb-5 pt-4" id="">
+                          <span class="text-white mr-2 bg-danger ml-3 bold p-1"
+                            >NCS - SYK</span
+                          >
+                        </div>
+                        <div
+                          class="m-0 occ_screen col-md-12 m-2"
+                          id="occ_screen"
+                        >
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              NCS 1</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">NCS</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              MKR 2</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">20 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">MKR</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              IMR 3</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">IMR</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              EKS 4</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_down down_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_down_label">
+                                <span class="station_text">EKS</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              SGR 5</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge"> Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">SGR</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                          <!-- line Cell -->
+                          <div class="station_cells" id="_stn_cell">
+                            <span class="trainlabel train_label_right" id="">
+                              SYK 6</span
+                            >
+                            <div
+                              class="train_line bg-white text-dark p-0"
+                              id=""
+                            >
+                              &nbsp; <span class="badge">10 Km/hr 8</span>
+                            </div>
+                            <div
+                              class="text-center st_loop_up up_loop_right"
+                              id=""
+                            >
+                              <div class="st_inner_label">
+                                <span class="station_text">SYK</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="line_gap_seal bg-white text-dark"
+                            id=""
+                          ></div>
+
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- line Cell -->
+
+                    <!---- mosy grid--->
+
+                    <div
+                      class="row justify-content-center m-0 p-0 col-md-12"
+                      id=""
+                    >
+                      <div
+                        data-mosy_msdn="load_modal_req('','Authorize_btn','Reject_btn')"
+                        class="col-md-3 bold mosy_msdn bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span id="start_trip_alert_counter">0</span>
+                        <span>START TRIP</span>
+                      </div>
+                      <div
+                        class="col-md-3 bold bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span>0</span>
+                        <span>MESSAGE</span>
+                      </div>
+                      <div
+                        class="col-md-3 bold bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span>0</span>
+                        <span>REQUEST INTERDICTION</span>
+                      </div>
+                      <div
+                        class="col-md-3 bold bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span>0</span>
+                        <span>TRAIN AVANCE</span>
+                      </div>
+                      <div
+                        data-mosy_msdn="load_modal_req('Exit','confirm_exit')"
+                        class="col-md-3 bold mosy_msdn bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span id="exit_line_alert_counter">0</span>
+                        <span>OUT</span>
+                      </div>
+                      <div
+                        data-mosy_msdn="load_modal_req('Authorized','Issue_btn')"
+                        class="col-md-3 mosy_msdn bg-dark bold text-white text-center cpointer border border_set p-3"
+                      >
+                        <span id="wait_license_alert_counter">0</span>
+                        <span>WAIT LICENSE</span>
+                      </div>
+                      <div
+                        class="col-md-3 bold bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span>0</span>
+                        <span>ALERT</span>
+                      </div>
+                      <div
+                        class="col-md-3 bold bg-dark text-white text-center cpointer border border_set p-3"
+                      >
+                        <span>0</span>
+                        <span>TRAIN READY</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <template id="modal_grid">
+                  <!---- mosy grid--->
+                  <div
+                    class="row justify-content-center m-0 p-0 col-md-12"
+                    id=""
+                  >
+                    <div
+                      class="row justify-content-center m-0 p-0 col-md-12 bg-dark sticky_scroll"
+                      style="z-index: 999"
+                      id=""
+                    >
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        Train
+                      </div>
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        Loco
+                      </div>
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        Tail
+                      </div>
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        Origin
+                      </div>
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        Dest
+                      </div>
+                      <div class="col-lg-2 col-3 text-white bold" id="">
+                        status
+                      </div>
+                    </div>
+                    <div
+                      class="row justify-content-center m-0 p-0 col-md-12"
+                      id="modal_search_temps_requests"
+                    ></div>
+                    <template id="modal_loop_tasks_requests">
+                      <div
+                        onclick="push_newval('requests_uptoken', btoa('{{primkey}}'));load_modal_req('{{status}}')"
+                        class="row justify-content-center bg-white cpointer m-0 p-0 col-md-12 sticky_scroll"
+                        style="z-index: 999"
+                        id=""
+                      >
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{train}}</span>
+                        </div>
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{locomotive}}</span>
+                        </div>
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{tail}}</span>
+                        </div>
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{origin_name}}</span>
+                        </div>
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{destination_name}}</span>
+                        </div>
+                        <div class="col-lg-2 col-3 text-wrap p-1 border" id="">
+                          <span class="text-wrap">{{status}}</span>
+                        </div>
+                      </div>
+                    </template>
+                    <div class="col-md-12 text-right pt-4" id="">
+                      <div
+                        class="cpointer btn btn-primary mb-3 hidden"
+                        id="Authorize_btn"
+                        onclick="push_newval('txt_status','Authorized');update_reqs()"
+                      >
+                        <i class="fa fa-check"></i> Authorize
+                      </div>
+                      <div
+                        class="cpointer btn btn-primary mb-3 hidden"
+                        id="Reject_btn"
+                        onclick="push_newval('txt_status','Rejected');update_reqs()"
+                      >
+                        <i class="fa fa-times"></i> Reject
+                      </div>
+                      <div
+                        class="cpointer btn btn-primary mb-3 hidden"
+                        id="Issue_btn"
+                        onclick="push_newval('txt_status','Issued');update_reqs()"
+                      >
+                        <i class="fa fa-star"></i> Issue License
+                      </div>
+                      <div
+                        class="cpointer btn btn-primary mb-3 hidden"
+                        id="confirm_exit"
+                        onclick="push_newval('txt_status','Exit_confirmed');update_reqs()"
+                      >
+                        <i class="fa fa-check"></i> Authorize Exit Line
+                      </div>
+                    </div>
+                  </div>
+                </template>
+                <!-- End body content -->
+                <input
+                  type="hidden"
+                  id="requests_uptoken"
+                  name="requests_uptoken"
+                  value=""
+                />
+                <input
+                  type="hidden"
+                  id="txt_status"
+                  name="txt_status"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="snack_box"></div>
+      <div id="dialog_box"></div>
+      <div id="ajax_snack"></div>
+      <div id="alert_box"></div>
+      <div id="magic_alert"></div>
+
+      <!-- Bootstrap core JavaScript ========================== -->
+
+      <!-- Placed at the end of the document so the pages load faster -->
+
+      <script src="assets/js/jquery-3.6.0.min.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+      <script src="assets/js/script.js?v=08080808"></script>
+      <script src="./js/jquery_main.js"></script>
+      <script src="./js/popper.js"></script>
+      <script src="./js/jsfunctions.js"></script>
+      <script src="./js/boot.js"></script>
+      <script src="./js/datahandler.js?v=150824110847am"></script>
+      <script src="./js/wgt_datahandler.js?v=150824110847am"></script>
+      <script src="./js/boot.js"></script>
+      <script src="./js/ui_ux.js?v=150824110847am"></script>
+
+      <script></script>
+      <script type="text/javascript">
+        function scroll__() {
+          const div = document.getElementById("occ_screen"); // replace "myDiv" with the ID of your div
+          const scrollStep = 5; // adjust this value to set the speed of scrolling
+          let scrollAmount = 0;
+
+          const scroll = setInterval(function () {
+            div.scrollLeft += scrollStep;
+            scrollAmount += scrollStep;
+            if (scrollAmount >= div.scrollWidth - div.clientWidth) {
+              clearInterval(scroll);
+            }
+          }, 10); // adjust the interval time as needed
+        }
+
+        function load_modal_req(status = "sent", btn_1 = "", btn_2 = "") {
+          mosy_modal(get_html("modal_grid"));
+          qreqs(
+            status,
+            "",
+            "modal_search_temps_requests",
+            "modal_loop_tasks_requests"
+          );
+
+          //// alert(get_newval('requests_uptoken'))
+
+          if (btn_1 == "" && btn_2 == "" && status == "sent") {
+            var btn_1 = "Authorize_btn";
+            var btn_2 = "Reject_btn";
+          }
+
+          if (btn_1 == "" && btn_2 == "" && status == "Authorized") {
+            var btn_1 = "Issue_btn";
+          }
+
+          if (btn_1 == "" && btn_2 == "" && status == "Exit") {
+            var btn_1 = "confirm_exit";
+          }
+          ////alert(btn_1+" - "+btn_2+" - "+status);
+
+          mosyshow_elem(btn_1, "inline-block");
+          mosyshow_elem(btn_2, "inline-block");
+        }
+        ////==========select_q
+        function qreqs(
+          qstr = "",
+          callback = "",
+          search_temps_requests = "search_temps_requests",
+          loop_tasks_requests = "loop_tasks_requests"
+        ) {
+          var clean_str = qstr;
+
+          if (callback != "") {
+            magic_message(callback, "dialog_box");
+            clean_str = "";
+          }
+
+          qkload_requests(
+            clean_str,
+            "push_grid_result:" + search_temps_requests,
+            get_html(loop_tasks_requests),
+            "status!='Complete'",
+            'origin_station_id:origin_name|qstations_data($data_res["origin_station_id"])["station_name"],destination_station_id:destination_name|qstations_data($data_res["destination_station_id"])["station_name"],added_by:driver|qusers_data($data_res["added_by"])["name"]'
+          );
+        }
+
+        qreqs();
+
+        //======= add q
+        function add_requests() {
+          var vldt = ["txt_status"];
+
+          var required_val = mosy_validate_required(vldt);
+          if (required_val == 1) {
+            magic_message("Processing Request...", "dialog_box");
+            requests_ins_("mosy_form", vldt, "mosy_reload");
+          }
+        }
+
+        ///=== del q
+        function delete_requests() {
+          magic_yes_no_alert(
+            "Delete Requests?",
+            "alert_box",
+            "requests_rem_('" +
+              get_newval("requests_uptoken") +
+              "', 'qreqs:Requests Deleted')",
+            "mosy_reload()"
+          );
+        }
+
+        //load_row
+        function load_row_requests(datakey) {
+          mosyshow_elem("editbtn", "inline-block");
+          mosyshow_elem("delbtn", "inline-block");
+
+          push_newval("requests_uptoken", btoa(datakey));
+          initialize_requests();
+        }
+
+        setInterval(function () {
+          ////load_curr_req();
+          //function code here
+        }, 3000);
+      </script>
+    </form>
+  </body>
+</html>
